@@ -1,21 +1,77 @@
-// 221ProgrammingAssignment1.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/*******************************************************************
+*   Source Code CS221ProgrammingAssignment1
+*   Wesley Adams
+*   Programming Assignment 1 The Book Worm
+*
+*   This program is entirely my own work
+*******************************************************************/
 
-#include "pch.h"
 #include <iostream>
+#include <string.h>
+#include <cmath>
+#include "BookRecord.h"
+
+using namespace std;
+
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	char x;
+
+	//Test one
+	BookRecord* br = new BookRecord();
+	char name[32];
+	br->setTitle("Programming in C++");
+	br->getTitle(name);
+
+	//compare
+	if (strcmp(name, "Programming in C++") == 0)
+	{
+		cout << "The test1 was successful" << endl;
+	}
+
+	//Test two
+	long sNum;
+	br->setStockNum(12345);
+	sNum = br->getStockNum();
+
+	//compare
+	if (sNum == 12345)
+	{
+		cout << "The test2 was successful" << endl;
+	}
+
+	//Test three
+	int cl;
+	br->setClassification(123);
+	br->getClassification(cl);
+	if (cl == 123)
+	{
+		cout << "The test3 was successful" << endl;
+	}
+
+	//Test four
+	double cost;
+	br->setCost(50.50);
+	br->getCost(&cost);
+	if (cost == 50.50)
+	{
+		cout << "The test4 was successful" << endl;
+	}
+	//Test five
+	int num;
+	br->setNumberInStock(15);
+	num = br->getNumberInStock();
+
+	if (num == 15)
+	{
+		cout << "The test5 was successful" << endl;
+	}
+
+
+	cin >> x;
+	return 0;
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
 
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
+
